@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import axios from 'axios';
   export default {
     data() {
       return {
@@ -49,13 +50,45 @@
           password: '',
           checked: []
         },
-        show: true
+        show: true,
+        config :{
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }
       }
     },
     methods: {
       onSubmit(evt) {
         evt.preventDefault()
-        alert(JSON.stringify(this.form))
+        const params = new URLSearchParams();
+        params.append('email', this.form.email);
+        params.append('password', this.form.password);
+        axios.post(`http://localhost:3000/users/admin/login`, params,this.config)
+        .then(response => {
+            let is_admin = response.data.user.is_admin
+            localStorage.setItem('user',JSON.stringify(response.data.user))
+            localStorage.setItem('jwt',response.data.token)
+
+            if (localStorage.getItem('jwt') != null){
+                this.$emit('loggedIn')
+                if(this.$route.params.nextUrl != null){
+                    this.$router.push(this.$route.params.nextUrl)
+                }
+                else {
+                    if(is_admin== 1){
+                        this.$router.push('admin')
+                    }
+                    else {
+                        this.$router.push('dashboard')
+                    }
+                }
+            }
+            
+        })
+        .catch(e => {
+          this.errors.push(e)
+    })
       },
       onReset(evt) {
         evt.preventDefault()
