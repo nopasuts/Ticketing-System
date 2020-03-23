@@ -15,8 +15,6 @@
           <b-nav-item href="#" class="navItem" disabled>|</b-nav-item>
           <b-nav-item href="#/faq" class="navItem">Knowledge base</b-nav-item>
           <b-nav-item href="#" class="navItem" disabled>|</b-nav-item>
-          <b-nav-item href="#" class="navItem">Administration</b-nav-item>
-          <b-nav-item href="#" class="navItem" disabled>|</b-nav-item>
           <b-nav-item href="#" >
             <b-button variant="outline-primary" class="my-2 my-sm-0" >New Tickets
               <b-img src="https://i.ya-webdesign.com/images/ios-mail-icon-png-3.png" class="btnImg"></b-img>
@@ -30,15 +28,9 @@
             <b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Search</b-button>
           </b-nav-form>
           <b-nav-item href="#" class="navItem" disabled>|</b-nav-item>
-          <b-nav-item href="#" >
-            <b-button class="my-2 my-sm-0" >
-              <b-img src="https://i.ya-webdesign.com/images/gear-icon-png-1.png" class="btnImg"></b-img>
-            </b-button>
-          </b-nav-item>
-          <b-nav-item href="#" class="navItem" disabled>|</b-nav-item>
-          <b-nav-item href="#" >
-            <b-button class="my-2 my-sm-0" >
-              <b-img src="https://lh3.googleusercontent.com/proxy/L1LXqILnSmLK41E-KOU9RBlIIHnS-kM1B64-e4H4mn1gy_R17smbDeklVkWE5zF9zj7OhAmYy6t4fqvTKJLia7ofoycZLnmfV4HYzZs" class="btnImg"></b-img>
+          <b-nav-item href="#/login" >
+            <b-button class="my-2 my-sm-0">Login
+              <b-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQhPqLQW19Yl8Fi3Dpc-qtrlrum5SDnhoHCQQQ_pQuwR-DCcs57" class="btnImg"></b-img>
             </b-button>
           </b-nav-item>
         </b-navbar-nav>
